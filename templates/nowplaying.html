@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music App - Now Playing</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e1e1e;
+      padding: 15px 40px;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #1db954;
+    }
+
+    .logout-btn {
+      background: #ff4d4d;
+      padding: 6px 12px;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .now-playing {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .player img {
+      border-radius: 10px;
+      margin-bottom: 20px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .controls button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      background: #1db954;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background: #17a74a;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🎵 Music App</div>
+    <ul class="nav-links">
+      <!-- ✅ Use url_for for Flask routes -->
+      <li><a href="{{ url_for('library_page') }}">My Library</a></li>
+      <li><a href="{{ url_for('nowplaying_page') }}">Now Playing</a></li>
+      <li><a href="{{ url_for('login_page') }}" class="logout-btn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="now-playing">
+    <h2>Now Playing</h2>
+    <div class="player">
+      <img src="https://via.placeholder.com/200" alt="Album Art">
+      <h3>Blinding Lights - The Weeknd</h3>
+      <div class="controls">
+        <button>⏮️ Prev</button>
+        <button>⏯️ Play/Pause</button>
+        <button>⏭️ Next</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
