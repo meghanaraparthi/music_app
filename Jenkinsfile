@@ -5,21 +5,21 @@ pipeline {
         stage('Build Docker Image') { 
             steps { 
                 echo "Building Docker Image..."
-                bat "docker build -t sreeja20082004/sample:v1 ." //change with ur username of dockerhub and container name
+                bat "docker build -t meghanaraparthi1/sample:v1 ." //change with ur username of dockerhub and container name
             } 
         }
 
         stage('Docker Login') {
             steps {
                 echo "Logging into Docker Hub..."
-                bat 'docker login -u sreeja20082004 -p <YOUR_DOCKERHUB_PASSWORD>' //change with ur dockerhub username and password
+                bat 'docker login -u meghanaraparthi1 -p meghana@2005' //change with ur dockerhub username and password
             }
         }
 
         stage('Push Docker Image to Docker Hub') {
             steps {
                 echo "Pushing Docker image to Docker Hub..."
-                bat "docker push sreeja20082004/sample:v1" //change
+                bat "docker push meghanaraparthi1/sample:v1" //change
             }
         }
 
