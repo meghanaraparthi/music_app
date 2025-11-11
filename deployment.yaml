@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: sample
-          image: sreeja20082004/sample:v1 #change with ur username of dockerhub and container name
+          image: meghanaraparthi1/sample:v1 #change with ur username of dockerhub and container name
           ports:
             - containerPort: 5000
